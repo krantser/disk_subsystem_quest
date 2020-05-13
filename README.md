@@ -93,6 +93,17 @@ tmpfs           100M     0  100M   0% /run/user/1000
 /dev/md0p5       91M  1,6M   83M   2% /mnt/soft_raid/part_5
 ```
 
+# **Настраиваем автоматическое монитрование устройств**
+
+Для этого, добавляем в /etc/fstab следующие записи:
+
+```
+/dev/md0p1  /mnt/soft_raid/part_1  ext4  defaults  0  2
+/dev/md0p2  /mnt/soft_raid/part_2  ext4  defaults  0  2
+/dev/md0p3  /mnt/soft_raid/part_3  ext4  defaults  0  2
+/dev/md0p4  /mnt/soft_raid/part_4  ext4  defaults  0  2
+```
+
 # **Сохраняем проект в репозиторий**
 
 Переходим в папку с проектом:
@@ -122,6 +133,6 @@ git status
 Добавляем файлы для отслеживания:
 
 ```
-git add Vagrantfile README.md
+git add Vagrantfile README.md make_raid.sh
 ```
 
